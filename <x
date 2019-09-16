@@ -1,0 +1,40 @@
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#	new file:   0x02-shell_redirections/0-hello_world
+#	new file:   0x02-shell_redirections/1-confused_smiley
+#	new file:   0x02-shell_redirections/10-AZ
+#	new file:   0x02-shell_redirections/10-no_more_js
+#	new file:   0x02-shell_redirections/11-directories
+#	new file:   0x02-shell_redirections/12-newest_files
+#	new file:   0x02-shell_redirections/13-unique
+#	new file:   0x02-shell_redirections/14-findthatword
+#	new file:   0x02-shell_redirections/15-countthatword
+#	new file:   0x02-shell_redirections/16-whatsnext
+#	new file:   0x02-shell_redirections/17-hidethisword
+#	new file:   0x02-shell_redirections/18-letteronly
+#	new file:   0x02-shell_redirections/2-hellofile
+#	new file:   0x02-shell_redirections/20-hiago
+#	new file:   0x02-shell_redirections/21-reverse
+#	new file:   0x02-shell_redirections/22-users_and_homes
+#	new file:   0x02-shell_redirections/3-twofiles
+#	new file:   0x02-shell_redirections/4-lastlines
+#	new file:   0x02-shell_redirections/5-firstlines
+#	new file:   0x02-shell_redirections/6-third_line
+#	new file:   0x02-shell_redirections/7-file
+#	new file:   0x02-shell_redirections/8-cwd_state
+#	new file:   0x02-shell_redirections/9-duplicate_last_line
+#	new file:   0x02-shell_redirections/README.md
+#
+# Changes not staged for commit:
+#	deleted:    0x01-shell_permissions/8-james_bond
+#
+# Untracked files:
+#	0x01-shell_permissions/101-man_holberton~
+#	0x01-shell_permissions/hello
+#	0x01-shell_permissions/olleh
+#
