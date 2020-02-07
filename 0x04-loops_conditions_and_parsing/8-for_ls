@@ -2,5 +2,5 @@
 #list a files in current directory whitout number
 for i in $(ls -C1)
 do
-echo $i | cut -d'-' -f2
+echo "$i" | cut -d'-' -f2
 done
