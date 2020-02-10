@@ -9,20 +9,14 @@
  * On error.
  */
 
-int zombie(void)
+int zombie(pid_t child_pid)
 {
 	int i;
-	pid_t child_pid;
 
 	for (i = 0; i < 5; i++)
 	{
 		child_pid = fork();
-
-		if (child_pid < 0)
-		{
-			perror("fork error");
-		}
-		else if (child_pid == 0)
+        if (child_pid == 0)
 		{
 			printf("Zombie process created, PID:%d\n", getpid());
 			exit(0);
@@ -57,6 +51,8 @@ int infinite_while(void)
 
 int main(void)
 {
-	zombie();
+    pid_t child_pid = 0;
+
+	zombie(child_pid);
 	infinite_while();
 }
