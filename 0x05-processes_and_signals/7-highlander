@@ -1,1 +1,8 @@
 #!/usr/bin/env bash
+# this is a comment
+trap "echo 'I am invincible!!!'" 15 
+while true
+do
+    echo "To infinity and beyond"
+    sleep 2
+done
