@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# this is a comment
+echo $$ >> /var/run/holbertonscript.pid
+trap "echo 'I am invincible!!!'" 15 
+trap "echo 'Y U no love me?!'" SIGINT 
+trap 'rm /var/run/holbertonscript.pid' SIGINT SIGQUIT 
+while true
+do
+    echo "To infinity and beyond"
+    sleep 2
+done
