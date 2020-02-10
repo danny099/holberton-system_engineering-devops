@@ -53,5 +53,5 @@ int main(void)
 
 	zombie(child_pid);
 	infinite_while();
-	return(0);
+	return (0);
 }
