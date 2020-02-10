@@ -3,8 +3,8 @@
 echo $$ >> /var/run/holbertonscript.pid
 trap "echo 'I am invincible!!!'" 15 
 trap "echo 'Y U no love me?!'" SIGINT 
-trap 'rm /var/run/holbertonscript.pid' SIGQUIT 
-trap 'rm /var/run/holbertonscript.pid' SIGINT
+trap 'rm -R /var/run/holbertonscript.pid;exit' SIGQUIT 
+trap 'rm -R /var/run/holbertonscript.pid;exit' SIGINT
 while true
 do
     echo "To infinity and beyond"
