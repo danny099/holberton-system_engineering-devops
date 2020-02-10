@@ -1,10 +1,10 @@
-#include <stdlib.h>
 #include <stdio.h>
-#include <sys/types.h>
 #include <unistd.h>
+#include <stdlib.h>
 /**
  **zombie - copy a strings
  *
+ * @child_pid: is a pid
  * Return: On succes string.
  * On error.
  */
@@ -16,7 +16,7 @@ int zombie(pid_t child_pid)
 	for (i = 0; i < 5; i++)
 	{
 		child_pid = fork();
-        if (child_pid == 0)
+		if (child_pid == 0)
 		{
 			printf("Zombie process created, PID:%d\n", getpid());
 			exit(0);
@@ -51,7 +51,7 @@ int infinite_while(void)
 
 int main(void)
 {
-    pid_t child_pid = 0;
+	pid_t child_pid = 0;
 
 	zombie(child_pid);
 	infinite_while();
