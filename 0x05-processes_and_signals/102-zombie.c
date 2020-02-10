@@ -9,7 +9,7 @@
  * On error.
  */
 
-int zombie(pid_t child_pid)
+void zombie(__pid_t child_pid)
 {
 	int i;
 
@@ -22,8 +22,6 @@ int zombie(pid_t child_pid)
 			exit(0);
 		}
 	}
-
-
 }
 
 /**
@@ -51,7 +49,7 @@ int infinite_while(void)
 
 int main(void)
 {
-	pid_t child_pid = 0;
+	__pid_t child_pid = 0;
 
 	zombie(child_pid);
 	infinite_while();
