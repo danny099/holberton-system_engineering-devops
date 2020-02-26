@@ -1,1 +1,3 @@
 #!/usr/bin/env bash
+#advance
+nc -l localhost 98
