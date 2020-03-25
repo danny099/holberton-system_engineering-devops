@@ -1,1 +1,10 @@
 #!/usr/bin/env bash
+# update linux
+apt-get update
+#install nginx
+apt-get -y install nginx
+#set http
+ufw allow 'Nginx HTTP'
+#edit index
+echo "Holberton School" > /var/www/html/index.nginx-debian.html
+service nginx start
