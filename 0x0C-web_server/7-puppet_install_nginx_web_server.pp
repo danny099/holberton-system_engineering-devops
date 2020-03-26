@@ -13,7 +13,7 @@ file_line { 'file':
   ensure   => present,
   path     => '/etc/nginx/sites-available/default',
   after    => 'listen 80 default_server;',
-  line     => 'rewrite ^/redirect_me https://www.linkedin.com/in/danny-alejandro-martinez-rivera-72b470192 permanent;',
+  line     => 'rewrite ^/redirect_me https://www.youtube.com/watch?v=QH2-TGUlwu4 permanent;',
   multiple => true
 }
 
