@@ -1,1 +1,13 @@
 #!/usr/bin/env bash
+# update linux
+apt-get update
+#install nginx
+apt-get -y install nginx
+#set http
+ufw allow 'Nginx HTTP'
+#edit index
+echo "Holberton School" > /var/www/html/index.nginx-debian.html
+#redirect me
+sed -i '/listen 80 default_server;/a rewrite ^/redirect_me https://www.linkedin.com/in/danny-alejandro-martinez-rivera-72b470192/ permanent;' /etc/nginx/sites-available/default
+#start nginx
+service nginx start
