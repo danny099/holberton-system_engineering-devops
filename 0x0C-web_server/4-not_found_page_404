@@ -1,1 +1,17 @@
 #!/usr/bin/env bash
+# update linux
+apt-get update
+#install nginx
+apt-get -y install nginx
+#set http
+ufw allow 'Nginx HTTP'
+#edit index
+echo "Holberton School" > /var/www/html/index.nginx-debian.html
+#custom 404
+echo "Ceci n'est pas une page" > /var/www/html/custom_404.html
+#redirect me
+sed -i '/listen 80 default_server;/a rewrite ^/redirect_me https://www.linkedin.com/in/danny-alejandro-martinez-rivera-72b470192/ permanent;' /etc/nginx/sites-available/default
+#error 404
+sed -i '/server_name _;/a error_page 404 /custom_404.html;\nlocation = /custom_404.html {\nroot /var/www/html;\ninternal;\n}' /etc/nginx/sites-available/default
+#start nginx
+service nginx start
