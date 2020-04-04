@@ -6,6 +6,7 @@ exec { 'update':
 
 package { 'nginx':
   ensure => installed,
+  require => Exec['update'],
 }
 
 file_line { 'header' :
@@ -13,6 +14,7 @@ file_line { 'header' :
   path   => '/etc/nginx/sites-available/default',
   line   => "\tadd_header X-Served-By "$HOSTNAME";",
   after  => 'server_name _;',
+  require => Package['nginx'],
 }
 
 file { '/var/www/html/index.html' :
@@ -21,4 +23,5 @@ file { '/var/www/html/index.html' :
 
 service { 'nginx':
   ensure => running,
+  require => File_line['header'],
 }
