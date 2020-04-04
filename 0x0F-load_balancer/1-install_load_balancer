@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+# Install ballancer
+
+VAR="\
+frontend load_balancer
+    bind *:80
+    mode http
+    default_backend 1292-web
+    
+backend 1292-web
+    balance roundrobin
+    server 1292-web-01 34.74.99.82:80 check
+    server 1292-web-02 3.90.104.161:80 check
+"
+apt-get update
+apt-get -y install haproxy
+echo "$VAR" >> /etc/haproxy/haproxy.cfg
+service haproxy start
