@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+# update linux
+apt-get update
+#install nginx
+apt-get -y install nginx
+#set http
+ufw allow 'Nginx HTTP'
+#edit index
+echo "Holberton School" > /var/www/html/index.nginx-debian.html
+#custom 404
+echo "Ceci n'est pas une page" > /var/www/html/custom_404.html
+echo "Holberton School" > /var/www/html/index.html
+echo "Ceci n'est pas une page" > /var/www/html/404.html
+printf %s "server {
+    listen 80;
+    listen [::]:80 default_server;
+    root   /var/www/html;
+    index index.html index.htm index.nginx-debian.html;
+    location /redirect_me {
+        return 301 https://www.youtube.com/watch?v=QH2-TGUlwu4;
+    }
+    error_page 404 /404.html;
+    location = /404.html {
+        internal;
+    }
+    add_header X-Served-By $HOSTNAME;
+}" > /etc/nginx/sites-available/default
+sudo /etc/init.d/nginx restart
