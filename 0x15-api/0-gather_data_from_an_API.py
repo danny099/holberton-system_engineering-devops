@@ -12,16 +12,15 @@ if __name__ == '__main__':
     all = requests.get(url+'/todos')
 
     data = all.json()
-    total = 0
+    t = 0
     completed = 0
 
     for i in data:
-        total += 1
+        t += 1
         if i.get('completed'):
             completed += 1
 
-    print("""Employee {} is done with tasks({}/{}):
-        """.format(name, completed, total))
+    print('Employee {} is done with tasks({}/{}):'.format(name, completed, t))
     for i in data:
         if i.get('completed'):
             print('\t {}'.format(i.get('title')))
