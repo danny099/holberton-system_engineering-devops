@@ -9,9 +9,9 @@ if __name__ == '__main__':
     url = 'https://jsonplaceholder.typicode.com'
     user = requests.get(url+'/users/'+id)
     name = user.json().get('name')
-    all = requests.get(url+'/todos')
+    user = requests.get(url+'/todos?userId={}'.format(argv[1]))
 
-    data = all.json()
+    data = user.json()
     t = 0
     completed = 0
 
