@@ -11,7 +11,7 @@ if __name__ == '__main__':
     id = argv[1]
     url = 'https://jsonplaceholder.typicode.com'
     user = requests.get(url+'/users/'+id)
-    name = user.json().get('name')
+    name = user.json().get('username')
     user = requests.get(url+'/todos?userId={}'.format(argv[1]))
 
     data = user.json()
