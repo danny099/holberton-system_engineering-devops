@@ -1,11 +1,15 @@
 #!/usr/bin/python3
-"""task 1"""
-import requests
-import csv
-from sys import argv
+"""
+task 1
+convert to csv
+"""
 
 
 if __name__ == '__main__':
+    import requests
+    import csv
+    from sys import argv
+
     id = argv[1]
     url = 'https://jsonplaceholder.typicode.com'
     user = requests.get(url+'/users/'+id)
@@ -14,9 +18,9 @@ if __name__ == '__main__':
 
     data = user.json()
 
-    with open('{}.csv'.format(argv[1]), mode='w') as csv_file:
-        csv_writer = csv.writer(csv_file, delimiter=',', quotechar='"',
+    with open('{}.csv'.format(argv[1]), mode='w') as f:
+        csv_writer = csv.writer(f, delimiter=',', quotechar='"',
                                 quoting=csv.QUOTE_ALL)
-        for task in data:
-            csv_writer.writerow([argv[1], name, task.get('completed'),
-                                 task.get('title')])
+        for i in data:
+            csv_writer.writerow(
+                [argv[1], user, i.get('completed'), i.get('title')])
