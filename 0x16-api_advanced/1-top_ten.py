@@ -11,7 +11,7 @@ def top_ten(subreddit):
         posts = "None\n"
     else:
         url = "https://www.reddit.com/r/{}/hot.json".format(subreddit)
-        headers = {'user-agent': 'chrome:happy/0.1.0'}
+        headers = {'user-agent': 'danny'}
         r = requests.get(url, headers=headers)
         if r.status_code != 200:
             posts = "None\n"
